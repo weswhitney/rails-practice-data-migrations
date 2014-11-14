@@ -3,8 +3,8 @@ default: &default
 
 development:
   <<: *default
-  database: rails-practice-validations-development
+  database: rails-practice-data-migrations-development
 
 test:
   <<: *default
-  database: rails-practice-validations-test
+  database: rails-practice-data-migrations-test

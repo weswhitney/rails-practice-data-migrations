@@ -1,15 +1,17 @@
 Person.delete_all
+Organization.delete_all
 
-30.times do
+30.times do |i|
   Person.create!(
     first_name: Faker::Name.first_name,
-    last_name: [Faker::Name.last_name, Faker::Name.last_name, nil].sample,
-    date_of_birth: ((20.years.ago.to_date..10.years.ago.to_date).to_a + [nil] * 1000).sample
+    last_name: Faker::Name.last_name,
+    date_of_birth: (i * 4).years.ago
   )
 end
 
-24.times do
+37.times do
   Organization.create!(
-    name: Faker::Company.name,
+    name: ([Faker::Company.name] * 3 + [nil]).sample,
+    active: [true, false, nil].sample,
   )
 end

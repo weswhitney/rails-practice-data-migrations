@@ -17,7 +17,8 @@ ActiveRecord::Schema.define(version: 20141110005805) do
   enable_extension "plpgsql"
 
   create_table "organizations", force: true do |t|
-    t.string "name"
+    t.string  "name"
+    t.boolean "active"
   end
 
   create_table "people", force: true do |t|
