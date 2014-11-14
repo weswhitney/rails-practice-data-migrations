@@ -9,9 +9,16 @@ Organization.delete_all
   )
 end
 
-37.times do
+17.times do
   Organization.create!(
     name: ([Faker::Company.name] * 3 + [nil]).sample,
+    active: [true, false, nil].sample,
+  )
+end
+
+15.times do
+  Organization.create!(
+    name: ([Faker::Company.name] * 3 + [nil, "", " "]).sample,
     active: [true, false, nil].sample,
   )
 end
